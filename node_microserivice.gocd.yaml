@@ -1,7 +1,7 @@
 ---
 format_version: 10
 pipelines:
-  ui-tests:
+  node-microservices:
     group: microservices
     materials:
       mainGit:
