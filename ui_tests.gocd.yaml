@@ -6,6 +6,7 @@ pipelines:
     materials:
       mygit:
         git: https://github.com/MareksPiternieks/ci-junior-2022.git
+        branch: main
     environemnt_variables:
       TEST_ENVIRONMENT: dev
     stages:
