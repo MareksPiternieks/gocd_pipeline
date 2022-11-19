@@ -12,6 +12,11 @@ common:
         command: bash
         arguments:
           - -c
+          - echo "Running tests on ${ENV_NAME} enviroment"
+    - exec:
+        command: bash
+        arguments:
+          - -c
           - docker run --network=host -d -t --name api_tests_executor_${ENV_NAME} api_test_executor
     - exec:
         command: bash
@@ -76,7 +81,7 @@ pipelines:
                     source: report_DEV.html
                     destination: test-output
               tabs:
-                report: test-output/report_DEV.html
+                report: test-output/report_dev.html
               tasks: *test-tasks
       - deploy-int:
           environemnt_variables:
