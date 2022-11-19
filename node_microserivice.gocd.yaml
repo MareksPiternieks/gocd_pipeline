@@ -5,10 +5,8 @@ pipelines:
     group: microservices
     materials:
       mainGit:
-        git: https://github.com/MareksPiternieks/ci-junior-2022.git
+        git: https://github.com/MareksPiternieks/ci-junior-2022
         branch: main
-    environemnt_variables:
-      TEST_ENVIRONMENT: dev
     stages:
       - build:
           jobs:
