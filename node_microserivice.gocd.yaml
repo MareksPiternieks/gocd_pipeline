@@ -2,7 +2,7 @@
 format_version: 10
 pipelines:
   ui-tests:
-    group: tests
+    group: microservices
     materials:
       mainGit:
         git: https://github.com/MareksPiternieks/ci-junior-2022.git
