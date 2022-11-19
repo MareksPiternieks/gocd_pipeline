@@ -1,0 +1,27 @@
+---
+format_version: 10
+pipelines:
+  ui-tests:
+    group: tests
+    materials:
+      mygit:
+        git: https://github.com/MareksPiternieks/ci-junior-2022.git
+    environemnt_variables:
+      TEST_ENVIRONMENT: dev
+    stages:
+      - test:
+          jobs:
+            test-chrome:
+              tasks:
+                - exec:
+                    command: bash
+                    arguments:
+                      - -c
+                      - echo "Running UI tests on ${params.ENVIRONMENT} environemnt and on ${browsers[i]} browser"
+            test-firefox:
+              tasks:
+                - exec:
+                    command: bash
+                    arguments:
+                      - -c
+                      - echo "Running UI tests on ${params.ENVIRONMENT} environemnt and on ${browsers[i]} browser"
