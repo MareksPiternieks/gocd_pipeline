@@ -78,10 +78,10 @@ pipelines:
             test:
               artifacts:
                 - build:
-                    source: report.html
+                    source: report_DEV.html
                     destination: test-output
               tabs:
-                report: test-output/report.html
+                report: test-output/report_DEV.html
               tasks: *test-tasks
       - deploy-int:
           environemnt_variables:
