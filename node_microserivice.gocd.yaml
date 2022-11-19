@@ -76,12 +76,12 @@ pipelines:
             ENV_NAME: DEV
           jobs:
             test:
-              artifacts:
-                - build:
-                    source: report_DEV.html
-                    destination: test-output
-              tabs:
-                report: test-output/report_DEV.html
+              # artifacts:
+              #   - build:
+              #       source: report_DEV.html
+              #       destination: test-output
+              # tabs:
+              #   report: test-output/report_DEV.html
               tasks: *test-tasks
       - deploy-int:
           environemnt_variables:
