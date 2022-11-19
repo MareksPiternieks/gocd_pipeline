@@ -1,0 +1,75 @@
+---
+format_version: 10
+pipelines:
+  ui-tests:
+    group: tests
+    materials:
+      mainGit:
+        git: https://github.com/MareksPiternieks/ci-junior-2022.git
+        branch: main
+    environemnt_variables:
+      TEST_ENVIRONMENT: dev
+    stages:
+      - build:
+          jobs:
+            build:
+              tasks:
+                - exec:
+                    command: bash
+                    arguments:
+                      - -c
+                      - echo "Building node application"
+      - deploy-dev:
+          jobs:
+            deploy:
+              tasks:
+                - exec:
+                    command: bash
+                    arguments:
+                      - -c
+                      - echo "Deployment on DEV enviroment triggered..."
+      - test-dev:
+          jobs:
+            test:
+              tasks:
+                - exec:
+                    command: bash
+                    arguments:
+                      - -c
+                      - echo "Running tests on DEV enviroment"
+      - deploy-int:
+          jobs:
+            deploy:
+              tasks:
+                - exec:
+                    command: bash
+                    arguments:
+                      - -c
+                      - echo "Deployment on INT enviroment triggered..."
+      - test-int:
+          jobs:
+            test:
+              tasks:
+                - exec:
+                    command: bash
+                    arguments:
+                      - -c
+                      - echo "Running tests on INT enviroment"
+      - deploy-prd:
+          jobs:
+            deploy:
+              tasks:
+                - exec:
+                    command: bash
+                    arguments:
+                      - -c
+                      - echo "Deployment on PRD enviroment triggered..."
+      - test-prd:
+          jobs:
+            test:
+              tasks:
+                - exec:
+                    command: bash
+                    arguments:
+                      - -c
+                      - echo "Running tests on PRD enviroment"
