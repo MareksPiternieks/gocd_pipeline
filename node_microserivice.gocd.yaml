@@ -91,10 +91,10 @@ pipelines:
             test:
               artifacts:
                 - build:
-                    source: report_DEV.html
+                    source: report_INT.html
                     destination: test-output
               tabs:
-                report: test-output/report_DEV.html
+                report: test-output/report_INT.html
               tasks: *test-tasks
       - deploy-prd:
           environemnt_variables:
@@ -109,8 +109,8 @@ pipelines:
             test:
               artifacts:
                 - build:
-                    source: report_DEV.html
+                    source: report_PRD.html
                     destination: test-output
               tabs:
-                report: test-output/report_DEV.html
+                report: test-output/report_PRD.html
               tasks: *test-tasks
