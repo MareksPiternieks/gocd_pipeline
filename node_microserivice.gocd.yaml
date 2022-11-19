@@ -76,12 +76,12 @@ pipelines:
             ENV_NAME: DEV
           jobs:
             test:
-              artifacts:
-                - build:
-                    source: bin/
-                    destination: test-output
-              tabs:
-                report: test-output/report_DEV.html
+              # artifacts:
+              #   - build:
+              #       source: bin/
+              #       destination: test-output
+              # tabs:
+              #   report: test-output/report_DEV.html
               tasks: *test-tasks
       - deploy-int:
           environemnt_variables:
@@ -94,12 +94,12 @@ pipelines:
             ENV_NAME: INT
           jobs:
             test:
-              artifacts:
-                - build:
-                    source: report_INT.html
-                    destination: test-output
-              tabs:
-                report: test-output/report_INT.html
+              # artifacts:
+              #   - build:
+              #       source: report_INT.html
+              #       destination: test-output
+              # tabs:
+              #   report: test-output/report_INT.html
               tasks: *test-tasks
       - deploy-prd:
           environemnt_variables:
@@ -112,10 +112,10 @@ pipelines:
             ENV_NAME: PRD
           jobs:
             test:
-              artifacts:
-                - build:
-                    source: report_PRD.html
-                    destination: test-output
-              tabs:
-                report: test-output/report_PRD.html
+              # artifacts:
+              #   - build:
+              #       source: report_PRD.html
+              #       destination: test-output
+              # tabs:
+              #   report: test-output/report_PRD.html
               tasks: *test-tasks
