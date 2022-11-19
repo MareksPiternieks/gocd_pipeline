@@ -3,10 +3,10 @@ format_version: 10
 common:
   deploy-task: &deploy-tasks
     - exec:
-      command: bash
-      arguments:
-        - -c
-        - echo "Deployment on ${ENV_NAME} enviroment triggered..."
+        command: bash
+        arguments:
+          - -c
+          - echo "Deployment on ${ENV_NAME} enviroment triggered..."
 pipelines:
   node-microservices:
     group: microservices
