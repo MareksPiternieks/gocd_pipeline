@@ -80,8 +80,8 @@ pipelines:
                 - build:
                     source: report_DEV.html
                     destination: test-output
-                  tabs:
-                    report: test-output/report_dev.html
+              tabs:
+                report: test-output/report_dev.html
               tasks: *test-tasks
       - deploy-int:
           environemnt_variables:
